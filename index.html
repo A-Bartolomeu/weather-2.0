@@ -18,6 +18,10 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,200&family=Libre+Franklin:wght@100;200;300;400;500&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/74daa50a2e.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <link rel="stylesheet" href="src/style.css" />
@@ -26,6 +30,38 @@
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
+        <div class="search-wrapper">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-8 search-style">
+                <input
+                  type="search"
+                  placeholder="Search a city.."
+                  class="form-control search-input"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="col-2">
+                <button
+                  class="btn btn-primary w-100 btn-style"
+                  id="search-button"
+                >
+                  <i class="fas fa-search icon-search"></i>
+                </button>
+              </div>
+              <div class="col-2">
+                <button
+                  class="btn btn-primary w-100 btn-style"
+                  id="location-button"
+                >
+                  <i class="fa-solid fa-location-dot"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
         <div class="weather-app">
           <h5 class="city">Lisbon</h5>
           <br />

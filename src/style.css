@@ -16,6 +16,39 @@ body {
   box-shadow: -3px -3px 10px #f3f3f3, 3px 3px 10px #dcdbdb;
 }
 
+.search-wrapper {
+  max-width: 600px;
+}
+.search-input {
+  background: #eaeaea;
+  border-radius: 10px;
+  border: 1px solid #f3f3f3;
+  box-shadow: inset 3px 3px 10px #dcdbdb, -3px -3px 10px #f3f3f3;
+}
+input::placeholder {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  color: #d1d1d1;
+}
+.search-input:hover {
+  box-shadow: -3px -3px 10px #f3f3f3, 3px 3px 10px #dcdbdb;
+  transition: 150ms;
+}
+
+.btn-style {
+  background: #eaeaea;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  box-shadow: -3px -3px 10px #f3f3f3, 3px 3px 10px #dcdbdb;
+}
+.btn-style:hover {
+  background: #eaeaea;
+  border: 1px solid #eaeaea;
+  box-shadow: inset 3px 3px 10px #dcdbdb, -3px -3px 10px #f3f3f3;
+  transition: 150ms;
+}
+
 .city {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 100;
