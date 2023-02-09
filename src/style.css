@@ -38,6 +38,30 @@ body {
   margin: 0 auto;
 }
 
+.temperature-style {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 40px;
+}
+.units {
+  position: relative;
+  font-size: 12px;
+  top: -25px;
+  letter-spacing: -0.5px;
+  color: #d1d1d1;
+}
+a {
+  color: #d1d1d1;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+a.active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
 .weather-details {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 100;
@@ -49,6 +73,7 @@ body {
 hr {
   margin: 2px;
   max-width: 145px;
+  border-radius: 1px;
 }
 ul {
   margin: 0;
