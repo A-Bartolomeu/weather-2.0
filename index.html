@@ -12,8 +12,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,200&family=Libre+Franklin:wght@100;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,200&family=Libre+Franklin:wght@100;200;300;400;500&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -34,8 +36,39 @@
             id="icon"
             class="weather-icon"
           />
+          <div class="row">
+            <div class="col-6">
+              <strong id="temperature">20</strong>
+              <span class="units"
+                ><a href="#" id="celsius-link" class="active">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a></span
+              >
+            </div>
+            <div class="col-6">
+              <p class="weather-details">Details</p>
+              <hr />
+              <ul>
+                <li class="details-list">
+                  Humidity:
+                  <span id="humidity"></span>%
+                </li>
+                <li class="details-list">
+                  Wind:
+                  <span id="wind"></span> km/h
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
+      <small class="footer-coder">
+        <a
+          href="https://github.com/wecodeschool/vanilla-weather-app"
+          target="_blank"
+          >Open-source code</a
+        >
+        by ABartolomeu
+      </small>
     </div>
     <script src="src/app.js"></script>
   </body>

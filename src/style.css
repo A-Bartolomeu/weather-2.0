@@ -37,3 +37,38 @@ body {
   display: block;
   margin: 0 auto;
 }
+
+.weather-details {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+}
+hr {
+  margin: 2px;
+  max-width: 145px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.details-list {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 200;
+  line-height: 1.5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-coder {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 400;
+  font-size: 8px;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+}
