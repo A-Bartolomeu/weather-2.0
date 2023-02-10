@@ -49,6 +49,13 @@ input::placeholder {
   transition: 150ms;
 }
 
+button:focus {
+  outline: 0;
+  box-shadow: 0;
+  background: none;
+  animation: none;
+}
+
 .city {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 100;
