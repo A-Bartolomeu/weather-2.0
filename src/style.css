@@ -70,6 +70,14 @@ form .form-control:focus {
   color: #999999;
 }
 
+.date {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  text-align: center;
+  color: #999999;
+}
+
 .description {
   font-family: "Fraunces", serif;
   font-weight: 400;
