@@ -53,6 +53,10 @@ input::placeholder {
   outline: none;
   box-shadow: none;
 }
+.btn-primary.focus,
+.btn-primary:focus {
+  box-shadow: -3px -3px 10px #f3f3f3, 3px 3px 10px #dcdbdb;
+}
 
 form .form-control:focus {
   border-color: transparent;
