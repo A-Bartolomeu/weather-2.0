@@ -48,12 +48,17 @@ input::placeholder {
   box-shadow: inset 3px 3px 10px #dcdbdb, -3px -3px 10px #f3f3f3;
   transition: 150ms;
 }
+.btn:not(:disabled):not(:disabled):active {
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+}
 
-button:focus {
-  outline: 0;
-  box-shadow: 0;
-  background: none;
-  animation: none;
+form .form-control:focus {
+  border-color: transparent;
+  background: #eaeaea;
+  border: 1px solid #eaeaea;
+  box-shadow: -3px -3px 10px #f3f3f3, 3px 3px 10px #dcdbdb;
 }
 
 .city {
