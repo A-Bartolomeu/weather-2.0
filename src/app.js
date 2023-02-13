@@ -94,6 +94,19 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+function searchLocation(position) {
+  let apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+  axios.get(url).then(showWeather);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
 
 let celsiusTemperature = null;
 
@@ -105,5 +118,8 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let currentLocationButton = document.querySelector("#location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 search("Lisbon");
