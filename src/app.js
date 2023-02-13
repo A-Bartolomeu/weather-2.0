@@ -1,5 +1,6 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
+  let day = date.getDate();
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -11,7 +12,7 @@ function formatDate(timestamp) {
   let year = date.getFullYear();
   let dayIndex = date.getDay();
 
-  let days = [
+  let weekDay = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -20,7 +21,7 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
+  let week = weekDay[dayIndex];
 
   let months = [
     "January",
@@ -37,7 +38,7 @@ function formatDate(timestamp) {
     "December",
   ];
   let month = months[date.getMonth()];
-  return `${day} | ${dayIndex} ${month} ${year} | ${hours}:${minutes}`;
+  return `${week} | ${day} ${month} ${year} | ${hours}:${minutes}`;
 }
 
 function displayTemperature(response) {
@@ -57,16 +58,15 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  debugger;
   iconElement.setAttribute(
     "src",
     `src/img/${response.data.weather[0].icon}.gif`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt", response.data.weather[0].icon);
 }
 
 function search(city) {
-  let apiKey = "ba622936a49e696805b510e96dc28632";
+  let apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
