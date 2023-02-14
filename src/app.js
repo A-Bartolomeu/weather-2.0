@@ -57,7 +57,9 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(
+    (response.data.dt + response.data.timezone) * 1000
+  );
   iconElement.setAttribute(
     "src",
     `src/img/${response.data.weather[0].icon}.gif`

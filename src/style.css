@@ -36,26 +36,34 @@ input::placeholder {
   transition: 150ms;
 }
 
+.col-gap {
+  padding-left: 5px;
+}
 .btn-style {
   background: #eaeaea;
+  color: white;
   border-radius: 10px;
   border: 1px solid #eaeaea;
   box-shadow: -3px -3px 10px #f3f3f3, 3px 3px 10px #dcdbdb;
+  grid-gap: 5px;
 }
 .btn-style:hover {
   background: #eaeaea;
+  color: #dcdbdb;
   border: 1px solid #eaeaea;
   box-shadow: inset 3px 3px 10px #dcdbdb, -3px -3px 10px #f3f3f3;
   transition: 150ms;
 }
 .btn:not(:disabled):not(:disabled):active {
   background-color: transparent;
-  outline: none;
-  box-shadow: none;
+  border-color: transparent;
+  outline: transparent;
+  outline-offset: none;
 }
-.btn-primary.focus,
-.btn-primary:focus {
+
+.btn:focus {
   box-shadow: -3px -3px 10px #f3f3f3, 3px 3px 10px #dcdbdb;
+  outline-offset: none;
 }
 
 form .form-control:focus {
