@@ -53,6 +53,8 @@ function displayTemperature(response) {
   let temperatureMax = document.querySelector("#maxtemperature");
 
   celsiusTemperature = response.data.main.temp;
+  maxCelsiusTemperature = response.data.main.temp_max;
+  minCelsiusTemperature = response.data.main.temp_min;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
@@ -67,8 +69,8 @@ function displayTemperature(response) {
     `src/img/${response.data.weather[0].icon}.gif`
   );
   iconElement.setAttribute("alt", response.data.weather[0].icon);
-  temperatureMin.innerHTML = Math.round(response.data.main.temp_min);
-  temperatureMax.innerHTML = Math.round(response.data.main.temp_max);
+  temperatureMin.innerHTML = Math.round(minCelsiusTemperature);
+  temperatureMax.innerHTML = Math.round(maxCelsiusTemperature);
 }
 
 function search(city) {
@@ -86,11 +88,17 @@ function handleSubmit(event) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  let temperatureMax = document.querySelector("#maxtemperature");
+  let temperatureMin = document.querySelector("#mintemperature");
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+  let maxFahrenheiTemperature = (maxCelsiusTemperature * 9) / 5 + 32;
+  temperatureMax.innerHTML = Math.round(maxFahrenheiTemperature);
+  let minFahrenheiTemperature = (minCelsiusTemperature * 9) / 5 + 32;
+  temperatureMin.innerHTML = Math.round(minFahrenheiTemperature);
 }
 
 function displayCelsiusTemperature(event) {
@@ -99,6 +107,10 @@ function displayCelsiusTemperature(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  let temperatureMax = document.querySelector("#maxtemperature");
+  temperatureMax.innerHTML = Math.round(maxCelsiusTemperature);
+  let temperatureMin = document.querySelector("#mintemperature");
+  temperatureMin.innerHTML = Math.round(minCelsiusTemperature);
 }
 function searchLocation(position) {
   let apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
