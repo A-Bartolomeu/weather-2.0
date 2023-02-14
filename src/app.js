@@ -49,6 +49,8 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  let temperatureMin = document.querySelector("#mintemperature");
+  let temperatureMax = document.querySelector("#maxtemperature");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -65,6 +67,8 @@ function displayTemperature(response) {
     `src/img/${response.data.weather[0].icon}.gif`
   );
   iconElement.setAttribute("alt", response.data.weather[0].icon);
+  temperatureMin.innerHTML = Math.round(response.data.main.temp_min);
+  temperatureMax.innerHTML = Math.round(response.data.main.temp_max);
 }
 
 function search(city) {
