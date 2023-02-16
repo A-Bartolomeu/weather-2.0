@@ -54,7 +54,7 @@ input::placeholder {
   box-shadow: inset 3px 3px 10px #dcdbdb, -3px -3px 10px #f3f3f3;
   transition: 150ms;
 }
-.btn:not(:disabled):not(:disabled):active {
+.btn:not(:disabled):active {
   background-color: transparent;
   border-color: transparent;
   outline: transparent;
@@ -62,7 +62,7 @@ input::placeholder {
 }
 
 .btn:focus {
-  box-shadow: -3px -3px 10px #f3f3f3, 3px 3px 10px #dcdbdb;
+  box-shadow: inset 3px 3px 10px #dcdbdb, -3px -3px 10px #f3f3f3;
   outline-offset: none;
 }
 
@@ -173,6 +173,39 @@ ul {
   margin: 0;
   padding: 0;
   color: #999999;
+}
+
+.weather-forecast {
+  font-family: "Libre Franklin", sans-serif;
+  text-align: center;
+  color: #999999;
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 65%;
+}
+.weather-forecast-date {
+  font-weight: 100;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.weather-forecast-temperature-min {
+  color: #d1d1d1;
+}
+.weather-forecast-temperatures {
+  font-size: 12px;
+}
+.img-forecast {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+.img-forecast:hover {
+  opacity: 1;
+  background: url("src/img/${forecastDay.weather[0].icon}.gif") no-repeat;
+  transition: 150ms;
 }
 
 .footer-coder {
