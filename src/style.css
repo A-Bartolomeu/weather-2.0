@@ -198,16 +198,26 @@ ul {
   font-size: 12px;
 }
 .img-forecast {
-  margin: 0 auto;
-  margin-bottom: 10px;
+  display: inline;
   opacity: 0.5;
 }
-.img-forecast:hover {
-  opacity: 1;
-  background: url("src/img/${forecastDay.weather[0].icon}.gif") no-repeat;
-  transition: 150ms;
+
+.img-forecast-gif {
+  display: none;
 }
 
+.forecast-weather-icon:hover {
+  transition: all 150ms ease-in-out;
+  opacity: 1;
+}
+
+.forecast-weather-icon:hover .img-forecast {
+  display: none;
+}
+
+.forecast-weather-icon:hover .img-forecast-gif {
+  display: inline;
+}
 .footer-coder {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 400;

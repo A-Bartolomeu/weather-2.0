@@ -63,12 +63,20 @@ function displayForecast(response) {
         `
       <div class="col">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-          <img
-           class="img-forecast"
-           src="src/img/forecast/${forecastDay.weather[0].icon}.png"
-           alt=""
-           width="45"
-          />
+          <div class="forecast-weather-icon">
+            <img
+            class="img-forecast"
+            src="src/img/forecast/${forecastDay.weather[0].icon}.png"
+            alt=""
+            width="45"
+            />
+            <img
+            class="img-forecast-gif"
+            src="src/img/${forecastDay.weather[0].icon}.gif"
+            alt=""
+            width="45"
+            />
+          </div>
           <div class="weather-forecast-temperatures">
            <span class="weather-forecast-temperature-max">
            <i class="fa-solid fa-caret-up"></i>${Math.round(
