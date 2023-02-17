@@ -57,6 +57,9 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
+    minCelsiusForescast = forecastDay.temp.min;
+    maxCelsiusForescast = forecastDay.temp.max;
+
     if (index < 5) {
       forecastHTML =
         forecastHTML +
@@ -79,13 +82,13 @@ function displayForecast(response) {
           </div>
           <div class="weather-forecast-temperatures">
            <span class="weather-forecast-temperature-max">
-           <i class="fa-solid fa-caret-up"></i>${Math.round(
-             forecastDay.temp.max
-           )}°</span>
+           <i class="fa-solid fa-caret-up"></i><span id="maxforecast">${Math.round(
+             maxCelsiusForescast
+           )}</span>°</span>
            <span class="weather-forecast-temperature-min">
-           <i class="fa-solid fa-caret-down"></i>${Math.round(
-             forecastDay.temp.min
-           )}°</span>
+           <i class="fa-solid fa-caret-down"></i><span id="minforecast">${Math.round(
+             minCelsiusForescast
+           )}</span>°</span>
         </div>
       </div>
   `;
@@ -97,7 +100,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "6bfa54f242cbb59343d4e58db578dc61";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
@@ -154,6 +156,8 @@ function displayFahrenheitTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   let temperatureMax = document.querySelector("#maxtemperature");
   let temperatureMin = document.querySelector("#mintemperature");
+  let forecastMax = document.querySelector("#maxforecast");
+  let forecastMin = document.querySelector("#minforecast");
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
@@ -163,6 +167,11 @@ function displayFahrenheitTemperature(event) {
   temperatureMax.innerHTML = Math.round(maxFahrenheiTemperature);
   let minFahrenheiTemperature = (minCelsiusTemperature * 9) / 5 + 32;
   temperatureMin.innerHTML = Math.round(minFahrenheiTemperature);
+
+  let minFahrenheiForecast = (minCelsiusForescast * 9) / 5 + 32;
+  forecastMin.innerHTML = Math.round(minFahrenheiForecast);
+  let maxFahrenheiForecast = (maxCelsiusForescast * 9) / 5 + 32;
+  forecastMax.innerHTML = Math.round(maxFahrenheiForecast);
 }
 
 function displayCelsiusTemperature(event) {
@@ -175,7 +184,13 @@ function displayCelsiusTemperature(event) {
   temperatureMax.innerHTML = Math.round(maxCelsiusTemperature);
   let temperatureMin = document.querySelector("#mintemperature");
   temperatureMin.innerHTML = Math.round(minCelsiusTemperature);
+
+  let forecastMin = document.querySelector("#minforecast");
+  forecastMin.innerHTML = Math.round(minCelsiusForescast);
+  let forecastMax = document.querySelector("#maxforecast");
+  forecastMax.innerHTML = Math.round(maxCelsiusForescast);
 }
+
 function searchLocation(position) {
   let apiKey = "6bfa54f242cbb59343d4e58db578dc61";
   let lat = position.coords.latitude;
